@@ -1,32 +1,13 @@
-/*
-//string
-const what = "Invidam"
+const title = document.querySelector("#title");
 
-
-//boolean
-const wat = true;
-
-//number
-const wat = 123;
-
-//float
-const wat = 55.1
-
-
-const daysOfWeek = ['mon','tue','wed','thu','fri','sat','sun'];
-
-console.log(daysOfWeek);
-*/
-
-const myInfo = {
-  name : 'invidam',
-  age : 22,
-  gender : 'male',
-  isHandSome : true,
-  favFood: [
-    {name: 'kimchi', price: 10},
-    {name: 'chicken', price: 30}
-  ]
+function handleClick(event)
+{
+  title.style.color = "red";
 }
+title.addEventListener("mouseenter", handleClick);
 
-console.log(myInfo);
+const test = {
+  abc: function abc() {console.log("test!")}
+};
+
+test.abc();
