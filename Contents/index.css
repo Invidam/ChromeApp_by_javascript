@@ -1,7 +1,13 @@
 body {
-  background-color:  black;
+  background-color:  #ecf0f1;
+}
+.btn{
+  cursor:pointer;
+}
+h1 {
+  color : #34495e;
 }
 
-h1 {
-  color : white;
+.clicked{
+  color : #9b59b6;
 }
