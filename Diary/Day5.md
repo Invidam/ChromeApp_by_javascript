@@ -1,7 +1,7 @@
 # 바닐라 JS로 크롬 앱 만들기 Day5
 + 범위: 4.0 ~ 4.1
 
-## 4.0 Making a JS Clock part One
+## 4.0, 4.1 Making a JS Clock
 + class 이름 방식
   + HTML에서는 js에서도, css에서도 활용하기 위해 `js-class`, `css-class` 처럼 짓는다.
   + JS에서는 `.js-class`로 받는다
