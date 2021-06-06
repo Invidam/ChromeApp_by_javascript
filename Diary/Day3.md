@@ -17,6 +17,7 @@
 ## 3.1 More Function Fun
 + backtick : `으로 만들어진 공간에 ${변수명}으로 변수를 입력할 수 있음.```
   + 가독성이 좋다.
+  + 문자열에 변수를 줄 수 있다.
 + 객체안에 함수를 넣을 수도 있다.
   + 이는 객체.함수로 실행한다. ex) calc.plus(1,2);
 
@@ -35,9 +36,10 @@
 
 ## 3.3 Modifying the DOM with JS
 + querySelector : css와 같은 형식으로 태그를 가져옴.
+  + ("tag"), ("#id"), (".class")처럼
 
-## 3.4
+## 3.4 Events and events handler
 
-+ handleReszie() : 즉시 실행
-+ handleReszie : 필요할 때 실행
++ handleReszie() : 즉시 한번 실행
++ handleReszie : 필요할 때마다 실행
   + 인자는 js함수에서 자동으로 부여한다.
