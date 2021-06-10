@@ -15,7 +15,6 @@ function deleteToDo(event) {
     return toDo.id !== parseInt(li.id);
     }
   );
-  console.log(cleanToDos);
   toDos = cleanToDos;
   saveToDos();
 }
@@ -48,10 +47,11 @@ function handleSubmit(event) {
   event.preventDefault();
   const currentValue = toDoInput.value;
   paintToDo(currentValue);
+  toDoInput.value = "";
+  toDoInput.placeholder = "";
 }
 
 function loadToDos() {
-  console.log("loading");
   const loadedToDos = localStorage.getItem(TODOS_LS);
   if(loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
@@ -59,8 +59,6 @@ function loadToDos() {
       paintToDo(toDo.text);
     }
    );
-    console.log(parsedToDos);
-    //toDos = parsedToDos;
   }
 }
 function init() {

@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 body {
-  background-color:  #ecf0f1;
+  font-family: 'Open Sans', sans-serif;
+  background-color:  #bdc3c7;
+}
+.info {
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+margin-bottom: 32px;
+
+}
+.contents {
+
 }
 .btn{
   cursor:pointer;
@@ -19,4 +33,57 @@ h1 {
 
 .showing {
   display:block;
+}
+
+.bgImage {
+  position : absolute;
+  top : 0;
+  left : 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation : fadeIn .5s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity : 0;
+  }
+  to {
+    opacity : 1;
+  }
+}
+input:focus {
+  outline:none;
+}
+form, .greetings {
+    border-bottom : 1px solid black;
+}
+.nameInput, .greetings {
+  margin-top: 32px;
+  font-size: 36px;
+  background : none;
+  border:0;
+}
+.toDoInput {
+  border: 0;
+  background : none;
+  font-size: 20px;
+}
+ .nameInput::placeholder {
+   color: black;
+}
+.toDoInput::placeholder {
+   color: black;
+}
+
+.contents {
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.toDo, .weather {
+  width: 70vh;
+  height: 50vh;
+  background-color : rgba(216, 211, 211, 0.2);
 }
