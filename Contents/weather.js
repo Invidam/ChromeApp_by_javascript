@@ -1,7 +1,7 @@
 const API_KEY = "5d77461c0704ff7b9103750e7b8cb292";
 const COORDS = "coords";
 const weather = document.querySelector(".js-weather");
-const PM_API_KEY = "B74412E0-BE78-3DBC-9F25-1EDE1666F169";
+const PM_API_KEY = "B2D954E2-0108-3B9B-B7FC-FDF686FC511D";
 function getParticularMatter(lat, lng) {
 
   console.log("load");
@@ -9,11 +9,20 @@ function getParticularMatter(lat, lng) {
   console.log(lat,lng);
   let headers = new Headers();
   headers.append('Access-Control-Allow-Origin','https://Invidam.github.io');
-  headers.append('Access-Control-Allow-Origin','https://api.vworld.kr/*');
-  fetch(`https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`,
-    {
+  // headers.append('Access-Control-Allow-Origin','http://localhost:3000');
+  headers.append('GET', 'POST', 'OPTIONS');
+  headers.append('Content-Type', 'application/json');
+  headers.append('Accept', 'application/json');
+  headers.append('Access-Control-Allow-Credentials', 'true');
+
+
+  const url = `https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`;
+  console.log(url);
+  fetch(url, {
+      mode : 'cors',
       method: 'GET',
       headers: headers,
+      credentials : 'include',
     }).then(function(response) {
       console.log(response);
     }).then(function(json) {
