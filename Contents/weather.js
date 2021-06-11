@@ -10,6 +10,8 @@ function getParticularMatter(lat, lng) {
   fetch(`https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`,
     {
       headers: {
+          'Access-Control-Request-Method' : 'content-type',
+          'Access-Control-Request-Headers' : 'POST',
           'Access-Control-Allow-Origin' : '*',
       },
        credentials: "include",
