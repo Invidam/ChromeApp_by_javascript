@@ -9,10 +9,8 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-margin-bottom: 32px;
-
-}
-.contents {
+margin-bottom: 64px;
+height: 220px;
 
 }
 .btn{
@@ -26,8 +24,7 @@ h1 {
   color : #9b59b6;
 }
 
-.form,
-.greetings{
+.form,.greetings {
   display:none;
 }
 
@@ -56,25 +53,24 @@ h1 {
 input:focus {
   outline:none;
 }
-form, .greetings {
-    border-bottom : 1px solid black;
+in, .greetings {
 }
-.nameInput, .greetings {
-  margin-top: 32px;
-  font-size: 36px;
+.nameInput, .greetings, .toDoInput {
   background : none;
   border:0;
+  border-bottom : 1px solid black;
+}
+.nameInput, .greetings {
+    margin-top: 32px;
+    font-size: 36px;
 }
 .toDoInput {
-  border: 0;
-  background : none;
+  width: 565px;
   font-size: 20px;
 }
- .nameInput::placeholder {
-   color: black;
-}
-.toDoInput::placeholder {
-   color: black;
+ .nameInput::placeholder,.toDoInput::placeholder {
+   color: rgba(49,49,49,.77);
+   font-weight: bold;
 }
 
 .contents {
@@ -83,7 +79,47 @@ form, .greetings {
 }
 
 .toDo, .weather {
-  width: 70vh;
-  height: 50vh;
+  width: 700px;
+  height: 500px;
   background-color : rgba(216, 211, 211, 0.2);
+}
+.toDoList {
+  margin: 5 0 0 0;
+  width: 660px;
+  height: 380px;
+  overflow: hidden;
+  overflow-y:scroll;
+}
+.toDoList li {
+  font-size: 24px;
+}
+.trashCan, .toDoList li button{
+  border : solid 1px rgba(138,138,138,.52);
+  background-color: rgba(162,162,162,.73);
+  float : right;
+}
+.trashCan {
+  float : right;
+  width: 130px;
+  height: 26px;
+}
+.showBox {
+  width:700px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border:0;
+  background-color : rgba(117,113,113,.22);
+  margin-bottom:40px;
+}
+.showBox:hover {
+  color:#252525;
+}
+.appear {
+  animation : fadeIn 1s linear;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
 }

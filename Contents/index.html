@@ -17,14 +17,23 @@
     </div>
     <div class="contents">
       <div class="weather">
-        <span class="js-weather"></span>
+        <button class = "js-weatherShowBox showBox">
+          Open Weather Info
+        </button>
+        <span class="js-weather js-weatherContents hidden"></span>
       </div>
       <div class="toDo">
-        <form class = "js-toDoForm">
-          <input class = "toDoInput" type = "text" placeholder = "Write something to do"  />
-        </form>
-        <ul  class = "js-toDoList">
-        </ul>
+        <button class = "js-toDoShowBox showBox">
+          Open To-Do List
+        </button>
+        <div class= "js-toDoContents hidden">
+          <form class = "js-toDoForm">
+            <input class = "toDoInput" type = "text" placeholder = "Write something to do"  />
+            <input class = "js-trashCan trashCan" type = "button" value = "Remove All Button" />
+          </form>
+          <ul class = "js-toDoList toDoList">
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -33,5 +42,6 @@
     <script src = "todo.js"></script>
     <script src = "bg.js"></script>
     <script src = "weather.js"></script>
+    <script src = "button.js"></script>
   </body>
 </html>

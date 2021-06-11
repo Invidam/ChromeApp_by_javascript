@@ -40,7 +40,6 @@ function loadCoords() {
   }
   else {
     const parseCoords = JSON.parse(loadedCoords);
-    console.log(parseCoords);
     getWeather(parseCoords.latitude,parseCoords.longitude);
     //getWeathher
   }
