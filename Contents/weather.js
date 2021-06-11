@@ -8,8 +8,8 @@ function getParticularMatter(lat, lng) {
   //경도 long 127 위도 lat 37
   console.log(lat,lng);
   let headers = new Headers();
-  header.append('Access-Control-Allow-Origin','https://Invidam.github.io');
-  header.append('Access-Control-Allow-Origin','https://api.vworld.kr/*');
+  headers.append('Access-Control-Allow-Origin','https://Invidam.github.io');
+  headers.append('Access-Control-Allow-Origin','https://api.vworld.kr/*');
   fetch(`https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`,
     {
       method: 'GET',
