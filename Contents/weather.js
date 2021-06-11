@@ -7,10 +7,17 @@ function getParticularMatter(lat, lng) {
   console.log("load");
   //경도 long 127 위도 lat 37
   console.log(lat,lng);
-  console.log(`https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}.json`);
-  fetch(`https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}.json`,      {
-        credentials: "include"
-      });
+  console.log(`https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`);
+  fetch(`https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`,
+    {
+         headers: { 'Content-Type': `*`,},
+         credentials: "include",
+       });
+      // {
+      //   method: "GET",
+      //   mode: 'cors',
+      //   headers: { 'Content-Type': 'application/json',}
+      // });
     //   .then(function(response) {
     //     console.log(response);
     //     return response.json();
