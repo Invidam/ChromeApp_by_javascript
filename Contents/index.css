@@ -123,3 +123,16 @@ in, .greetings {
   opacity: 0;
   transition: visibility 0s 1s, opacity 1s linear;
 }
+.weatherContents {
+  font-size: 24px;
+}
+.weatherContents ul li span {
+  font-weight: bold;
+
+}
+.weatherContents ul li {
+  padding-bottom: 20px;
+}
+.fast {
+  font-size: 24px;
+}

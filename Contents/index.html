@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Hi </title>
+    <title> To-Do List </title>
+    <link rel="shortcut icon"
+        href="../images/icon.png" />
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
@@ -20,7 +22,8 @@
         <button class = "js-weatherShowBox showBox">
           Open Weather Info
         </button>
-        <span class="js-weather js-weatherContents hidden"></span>
+        <span class="js-weather weatherContents js-weatherContents hidden"></span>
+        <span class="fast">출처: 환경부/환국환경공단 데이터는 실시간 관측된 자료이며, 측정소 현지 사정이나 데이터의 수신상태에 따라 미수신 될 수 있음.</span>
       </div>
       <div class="toDo">
         <button class = "js-toDoShowBox showBox">
@@ -36,7 +39,6 @@
         </div>
       </div>
     </div>
-
     <script src = "clock.js"> </script>
     <script src = "greeting.js"></script>
     <script src = "todo.js"></script>
