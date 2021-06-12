@@ -21,8 +21,8 @@ function getParticularMatter(lat, lng) {
   //const url = `https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=jsonp&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`;
   //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
   console.log(url);
-  fetch(url
-    }).then(function(response) {
+  fetch(url)
+  .then(function(response) {
       console.log(response);
       return response.json();
     }).then(function(json) {
