@@ -22,7 +22,7 @@ function getParticularMatter(lat, lng) {
       headers: headers,
       // mode : 'cors',
       // method: 'GET',
-      // credentials : 'include',
+      credentials : 'include',
     }).then(function(response) {
       console.log(response);
     }).then(function(json) {
