@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title> To-Do List </title>
     <link rel="shortcut icon"
         href="../images/icon.png" />
@@ -10,7 +11,7 @@
   <body>
     <div class="info">
       <div class="js-clock">
-        <h1 class="js-title">00:00</h1>
+        <h1 class="js-title clockTitle">00:00</h1>
       </div>
       <form class = "js-form form ">
         <input class = "nameInput" type="text" placeholder="What  is your name?" />
@@ -25,7 +26,7 @@
         <div class="js-weather weatherContents js-weatherContents hidden">
           <div class="js-weatherIndicator">
           </div>
-          <span class="fast">출처: 환경부/환국환경공단 데이터는 실시간 관측된 자료이며, 측정소 현지 사정이나 데이터의 수신상태에 따라 미수신 될 수 있음.</span>
+          <!-- <span class="fast">출처: 환경부/환국환경공단 데이터는 실시간 관측된 자료이며, 측정소 현지 사정이나 데이터의 수신상태에 따라 미수신 될 수 있음.</span> -->
         </div>
 
       </div>

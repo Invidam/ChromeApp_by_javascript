@@ -5,7 +5,6 @@ const weatherShowBox = document.querySelector(".js-weatherShowBox"),
   HIDDEN_CL = "hidden",
   APPEAR_CL = "appear";
 function handleWeatherClick() {
-  console.log("weather");
   weatherContents.classList.toggle(HIDDEN_CL);
   weatherContents.classList.toggle(APPEAR_CL);
 
@@ -17,7 +16,6 @@ function handleWeatherClick() {
 }
 
 function handleToDoClick() {
-  console.log("toDo");
   toDoContents.classList.toggle(HIDDEN_CL);
   toDoContents.classList.toggle(APPEAR_CL);
 
