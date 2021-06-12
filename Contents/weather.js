@@ -7,17 +7,19 @@ function getParticularMatter(lat, lng) {
   console.log("load");
   //경도 long 127 위도 lat 37
   console.log(lat,lng);
-  // let headers = new Headers();
-  // headers.append('Access-Control-Allow-Origin','https://Invidam.github.io');
+  let headers = new Headers();
+  headers.append('Access-Control-Allow-Origin','https://Invidam.github.io');
+  //headers.append('Access-Control-Allow-Origin','*');
   // headers.append('GET', 'POST', 'OPTIONS');
   // headers.append('Content-Type', 'application/json');
   // headers.append('Accept', 'application/json');
-  // headers.append('Access-Control-Allow-Credentials', 'true');
+  headers.append('Access-Control-Allow-Credentials', 'true');
 
-  //const url = `https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
+  const url = `https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`;
+  //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
   console.log(url);
   fetch(url, {
+      headers: headers,
       // mode : 'cors',
       // method: 'GET',
       // credentials : 'include',
