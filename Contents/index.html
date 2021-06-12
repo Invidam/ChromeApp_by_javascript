@@ -45,5 +45,21 @@
     <script src = "bg.js"></script>
     <script src = "weather.js"></script>
     <script src = "button.js"></script>
+    <script type="text/javascript" src = "https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=126.9494,37.22&format=json&type=both&zipcode=true&simple=false&key=B2D954E2-0108-3B9B-B7FC-FDF686FC511D"> </script>
+    <script>
+      console.log("api 도달");
+      const url = `https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`;
+      fetch(url).then(function(response) {
+          console.log(response);
+          return response;
+        }).then(function(json) {
+          console.log("PM val: " + json);
+        });
+    </script>
+    <script>
+      function callback(data) {
+          console.log(data);
+        }
+      </script>
   </body>
 </html>

@@ -2,6 +2,9 @@ const API_KEY = "5d77461c0704ff7b9103750e7b8cb292";
 const COORDS = "coords";
 const weather = document.querySelector(".js-weather");
 const PM_API_KEY = "B2D954E2-0108-3B9B-B7FC-FDF686FC511D";
+let lat;
+let lng;
+
 function getParticularMatter(lat, lng) {
 
   console.log("load");
@@ -56,6 +59,8 @@ function saveCoords(coordsObj) {
 function handleGeoSuccess(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
+  lat = latitude
+  lng = longitude;
   const coordsObj = {
     latitude,
     longitude
@@ -79,6 +84,8 @@ function loadCoords() {
   }
   else {
     const parseCoords = JSON.parse(loadedCoords);
+    lng = parseCoords.longitude;
+    lat = parseCoords.latitude;
     getWeather(parseCoords.latitude,parseCoords.longitude);
     //getWeathher
   }
