@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap');
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Titillium Web', sans-serif, 'Open Sans', sans-serif;
   background-color:  #bdc3c7;
 }
 body::-webkit-scrollbar {
@@ -123,7 +124,7 @@ input:focus {
 .showBox {
   width:700px;
   font-size: 30px;
-  font-weight: 730;
+  font-weight: 550;
   text-align: center;
   border:0;
   background-color : rgba(117,113,113,.22);
@@ -143,13 +144,15 @@ input:focus {
 .weatherContents {
   font-size: 24px;
 }
-.weatherContents ul li span {
-  font-weight: bold;
-
-}
 .weatherContents ul li {
+  font-weight: 10;
   padding-bottom: 20px;
 }
+.weatherContents ul li span {
+  font-weight: 600;
+
+}
+
 .fast {
   font-size: 24px;
 }
