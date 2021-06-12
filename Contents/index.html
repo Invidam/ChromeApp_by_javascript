@@ -22,8 +22,12 @@
         <button class = "js-weatherShowBox showBox">
           Open Weather Info
         </button>
-        <span class="js-weather weatherContents js-weatherContents hidden"></span>
-        <span class="fast">출처: 환경부/환국환경공단 데이터는 실시간 관측된 자료이며, 측정소 현지 사정이나 데이터의 수신상태에 따라 미수신 될 수 있음.</span>
+        <div class="js-weather weatherContents js-weatherContents hidden">
+          <div class="js-weatherIndicator">
+          </div>
+          <span class="fast">출처: 환경부/환국환경공단 데이터는 실시간 관측된 자료이며, 측정소 현지 사정이나 데이터의 수신상태에 따라 미수신 될 수 있음.</span>
+        </div>
+
       </div>
       <div class="toDo">
         <button class = "js-toDoShowBox showBox">
@@ -45,25 +49,5 @@
     <script src = "bg.js"></script>
     <script src = "weather.js"></script>
     <script src = "button.js"></script>
-    <script crossorigin="anonymous" type="text/javascript" src = "https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=126.9494,37.22&format=json&type=both&zipcode=true&simple=false&key=B2D954E2-0108-3B9B-B7FC-FDF686FC511D">
-      console.log("src 도달");
-    </script>
-    <script>
-      console.log(lng,lat);
-      console.log("api 도달");
-      //const url = `https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&crs=epsg:4326&point=${lng},${lat}&format=json&type=both&zipcode=true&simple=false&key=${PM_API_KEY}`;
-      //console.log(url);
-      // fetch(url).then(function(response) {
-      //     console.log(response);
-      //     return response;
-      //   }).then(function(json) {
-      //     console.log("PM val: " + json);
-      //   });
-    </script>
-    <script>
-      function callback(data) {
-          console.log(data);
-        }
-      </script>
   </body>
 </html>
