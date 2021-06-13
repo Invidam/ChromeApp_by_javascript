@@ -1,9 +1,10 @@
-.nameInput, .greetings,{
+.nameInput, .greetings{
   background : none;
   border:0;
   border-bottom : 1px solid black;
 }
 .nameInput, .greetings {
+    height:55px;
     margin: 0;
     font-size: 36px;
 }
