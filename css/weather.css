@@ -1,0 +1,16 @@
+.weather {
+ width: 700px;
+ height: 500px;
+ background-color : rgba(216, 211, 211, 0.2);
+}
+.weatherContents {
+  font-size: 24px;
+}
+.weatherContents ul li {
+  font-weight: 10;
+  padding-bottom: 20px;
+}
+.weatherContents ul li span {
+  font-weight: 600;
+
+}

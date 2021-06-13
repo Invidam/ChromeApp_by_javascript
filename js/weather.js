@@ -5,10 +5,8 @@ function getWeather(lat, lng) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
   fetch(url)
     .then(function(response) {
-      console.log(response);
       return response.json();
   }).then(function(json) {
-    console.log(json);
     const temperature = json.main.temp;
     const place = json.name;
     const weatherCondition = json.weather[0].description;

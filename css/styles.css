@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap');
+@import "bg.css";
+@import "contents.css";
+@import "showBox.css";
+@import "greeting.css";
+@import "clock.css";
+@import "weather.css";
+@import "todo.css";
+body {
+  font-family: 'Titillium Web', sans-serif, 'Open Sans', sans-serif;
+  background-color:  #bdc3c7;
+}
+body::-webkit-scrollbar {
+  background-color : rgba(216, 211, 211, 0.2);
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color : rgba(62,61,60,.85);
+}
+body::-webkit-scrollbar-track {
+  background-color : rgba(216, 211, 211, 0.2);
+}
+.info {
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+margin: 64px 0px 140px 0px;
+height: 220px;
+}
+.btn, button, input[type="button"] {
+    cursor:pointer;
+}
+input:focus {
+  outline:none;
+}
