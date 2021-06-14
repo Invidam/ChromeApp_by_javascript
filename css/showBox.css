@@ -3,16 +3,17 @@
   font-size: 30px;
   font-weight: 550;
   text-align: center;
+  color: rgba(10,10,10,.92);
   border:0;
   background-color : rgba(117,113,113,.22);
   margin-bottom:40px
 }
 button, input[type="button"] {
-
     cursor:pointer;
 }
 .showBox:hover {
-  color:#252525;
+  color:rgba(37,37,37,.66);
+  transition: color .15s linear;
 }
 .appear {
   animation : fadeIn 1s linear;

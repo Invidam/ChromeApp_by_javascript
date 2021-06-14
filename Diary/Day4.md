@@ -5,6 +5,7 @@
 + `if() {} else if {} else {}` : 조건문
   + 비교는 `===`으로
   + 피연산자 `&&`, `||`
++ 삼항연산자 사용은 가능하지만, 반복사용은 안된다.
 
 ## 3.6 DOM - If else - Function practice
 + js dom event mdn

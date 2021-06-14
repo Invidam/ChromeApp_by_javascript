@@ -7,11 +7,3 @@
   z-index: -1;
   animation : fadeIn .5s linear;
 }
-@keyframes fadeIn {
-  from {
-    opacity : 0;
-  }
-  to {
-    opacity : 1;
-  }
-}

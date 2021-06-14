@@ -1,19 +1,16 @@
 .nameInput, .greetings{
   background : none;
   border:0;
-  border-bottom : 1px solid black;
-}
-.nameInput, .greetings {
-    height:55px;
-    margin: 0;
-    font-size: 36px;
+  border-bottom : 3px solid rgba(0,0,0,.87);
+  height:58px;
+  margin: 0;
+  font-size: 36px;
 }
 .nameInput::placeholder {
   color: rgba(49,49,49,.77);
   opacity: .82;
   font-weight: bold;
 }
-
 .form,.greetings {
   display:none;
 }

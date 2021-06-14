@@ -7,7 +7,6 @@ function paintImage(imgNumber) {
   img.src = `./images/landscape_0${imgNumber}.jpg`;
   img.classList.add("bgImage");
   body.prepend(img);
-
 }
 
 function generateRandom() {

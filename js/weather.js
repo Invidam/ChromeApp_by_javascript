@@ -4,29 +4,6 @@ const PM_API_KEY = "aacb663d-8e01-435a-b8c3-bb3d8f65b8a9";
 const weather = document.querySelector(".js-weather");
 const weatherList = document.querySelector(".js-weatherList");
 
-
-function getWeather(lat, lng) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
-  fetch(url)
-    .then(function(response) {
-      return response.json();
-  }).then(function(json) {
-
-    const loc_li = document.createElement("li");
-    const tem_li = document.createElement("li");
-    const wea_li = document.createElement("li");
-    const temperature = json.main.temp;
-    const place = json.name;
-    const weatherCondition = json.weather[0].main;
-    loc_li.innerHTML = `<li><span>Location</span>: ${place}</li>`;
-    tem_li.innerHTML = `<li><span>Temperature</span>: ${temperature}℃</li>`;
-    wea_li.innerHTML = `<li><span>Weather</span>: ${weatherCondition} </li>`;
-    weatherList.appendChild(loc_li);
-    weatherList.appendChild(tem_li);
-    weatherList.appendChild(wea_li);
-    getParticularMatter(lat,lng);
-  });
-}
 function setState(airQuality) {
   let state;
   if(airQuality < 51)
@@ -41,23 +18,54 @@ function setState(airQuality) {
     state = 'Very Unhealthy';
   return state;
 }
-function paintParticularMatter(airQuality) {
-  const state = setState(airQuality);
 
+function paintAirQuality(airQuality) {
+  const state = setState(airQuality);
   const li = document.createElement("li");
+
   li.innerHTML = `<span>Air Quality</span>: ${state}(${airQuality})`;
   weatherList.appendChild(li);
 }
-function getParticularMatter(lat, lng) {
+
+function getAirQuality(lat, lng) {
   const url = `https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lng}&key=${PM_API_KEY}`;
   fetch(url)
   .then(function(response) {
       return response.json();
     }).then(function(json) {
       const airQuality = json.data.current.pollution.aqius;
-      paintParticularMatter(airQuality);
+      paintAirQuality(airQuality);
     });
 }
+
+function paintWeather(location,temperature,weatherCondition) {
+
+  const loc_li = document.createElement("li");
+  const tem_li = document.createElement("li");
+  const wea_li = document.createElement("li");
+  loc_li.innerHTML = `<li><span>Location</span>: ${location}</li>`;
+  tem_li.innerHTML = `<li><span>Temperature</span>: ${temperature}℃</li>`;
+  wea_li.innerHTML = `<li><span>Weather</span>: ${weatherCondition} </li>`;
+  weatherList.appendChild(loc_li);
+  weatherList.appendChild(tem_li);
+  weatherList.appendChild(wea_li);
+}
+
+function getWeather(lat, lng) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+  }).then(function(json) {
+    const temperature = json.main.temp;
+    const location = json.name;
+    const weatherCondition = json.weather[0].main;
+    paintWeather(location,temperature,weatherCondition);
+    getAirQuality(lat,lng);
+  });
+
+}
+
 function saveCoords(coordsObj) {
   localStorage.setItem(COORDS, JSON.stringify(coordsObj));
 }
@@ -65,8 +73,6 @@ function saveCoords(coordsObj) {
 function handleGeoSuccess(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
-  lat = latitude
-  lng = longitude;
   const coordsObj = {
     latitude,
     longitude
@@ -82,7 +88,6 @@ function askForCoords() {
   navigator.geolocation.getCurrentPosition(handleGeoSuccess,handleGeoError);
 }
 
-
 function loadCoords() {
   const loadedCoords = localStorage.getItem(COORDS);
   if(loadedCoords === null) {
@@ -96,6 +101,7 @@ function loadCoords() {
 
 function init() {
   loadCoords();
+  setInterval(loadCoords, 1800000);
 }
 
 init();
