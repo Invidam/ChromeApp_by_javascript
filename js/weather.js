@@ -49,7 +49,7 @@ function paintParticularMatter(airQuality) {
   weatherList.appendChild(li);
 }
 function getParticularMatter(lat, lng) {
-  const url = `http://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lng}&key=${PM_API_KEY}`;
+  const url = `https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lng}&key=${PM_API_KEY}`;
   fetch(url)
   .then(function(response) {
       return response.json();
