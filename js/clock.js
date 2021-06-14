@@ -4,7 +4,7 @@ const clockContainer = document.querySelector(".js-clock"),
 function getTime(){
   const date = new Date();
   const befHours = date.getHours();
-  const meridiem = befHours <= 12 ? 'AM' : 'PM';
+  const meridiem = befHours < 12 ? 'AM' : 'PM';
   const hours = befHours <= 12 ? befHours : befHours % 12;
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
