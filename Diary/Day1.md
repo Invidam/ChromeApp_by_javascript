@@ -18,6 +18,8 @@
 ## 1.2 ES5, ES6 ES....!?!?!
 + ES: ECMASCripts : Specification(사용 설명서)에 대한 Update
   + 브라우저에 따라 실행방식은 다름, 결과는 같음
+  + https://www.youtube.com/watch?v=wcsVjmHrUQg
+    + js 역사 설명 영상
 
 ## 1.3 VanillaJS
 + VanillaJS는 브라우저를 통해 제공된 JS이다. (?)
