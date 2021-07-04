@@ -1,21 +1,16 @@
-const API_KEY = "5d77461c0704ff7b9103750e7b8cb292";
+const WEATHER_API_KEY = "5d77461c0704ff7b9103750e7b8cb292";
 const COORDS = "coords";
-const PM_API_KEY = "aacb663d-8e01-435a-b8c3-bb3d8f65b8a9";
+const AQI_API_KEY = "aacb663d-8e01-435a-b8c3-bb3d8f65b8a9";
 const weather = document.querySelector(".js-weather");
 const weatherList = document.querySelector(".js-weatherList");
 
 function setState(airQuality) {
   let state;
-  if(airQuality < 51)
-    state =  'Good';
-  else if(airQuality < 101)
-    state = 'Moderate';
-  else if(airQuality < 151)
-    state='Unhealthy for Sensitive Groups';
-  else if(airQuality < 251)
-    state = 'Unhealthy';
-  else
-    state = 'Very Unhealthy';
+  if (airQuality < 51) state = "Good";
+  else if (airQuality < 101) state = "Moderate";
+  else if (airQuality < 151) state = "Unhealthy for Sensitive Groups";
+  else if (airQuality < 251) state = "Unhealthy";
+  else state = "Very Unhealthy";
   return state;
 }
 
@@ -28,18 +23,18 @@ function paintAirQuality(airQuality) {
 }
 
 function getAirQuality(lat, lng) {
-  const url = `https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lng}&key=${PM_API_KEY}`;
+  const url = `https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lng}&key=${AQI_API_KEY}`;
   fetch(url)
-  .then(function(response) {
+    .then(function (response) {
       return response.json();
-    }).then(function(json) {
+    })
+    .then(function (json) {
       const airQuality = json.data.current.pollution.aqius;
       paintAirQuality(airQuality);
     });
 }
 
-function paintWeather(location,temperature,weatherCondition) {
-
+function paintWeather(location, temperature, weatherCondition) {
   const loc_li = document.createElement("li");
   const tem_li = document.createElement("li");
   const wea_li = document.createElement("li");
@@ -52,18 +47,18 @@ function paintWeather(location,temperature,weatherCondition) {
 }
 
 function getWeather(lat, lng) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${WEATHER_API_KEY}&units=metric`;
   fetch(url)
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
-  }).then(function(json) {
-    const temperature = json.main.temp;
-    const location = json.name;
-    const weatherCondition = json.weather[0].main;
-    paintWeather(location,temperature,weatherCondition);
-    getAirQuality(lat,lng);
-  });
-
+    })
+    .then(function (json) {
+      const temperature = json.main.temp;
+      const location = json.name;
+      const weatherCondition = json.weather[0].main;
+      paintWeather(location, temperature, weatherCondition);
+      getAirQuality(lat, lng);
+    });
 }
 
 function saveCoords(coordsObj) {
@@ -75,27 +70,25 @@ function handleGeoSuccess(position) {
   const longitude = position.coords.longitude;
   const coordsObj = {
     latitude,
-    longitude
+    longitude,
   };
   saveCoords(coordsObj);
-  getWeather(latitude,longitude);
-
+  getWeather(latitude, longitude);
 }
 function handleGeoError() {
-  console.log("Cant get geo-Location")
+  console.log("Cant get geo-Location");
 }
 function askForCoords() {
-  navigator.geolocation.getCurrentPosition(handleGeoSuccess,handleGeoError);
+  navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
 }
 
 function loadCoords() {
   const loadedCoords = localStorage.getItem(COORDS);
-  if(loadedCoords === null) {
+  if (loadedCoords === null) {
     askForCoords();
-  }
-  else {
+  } else {
     const parseCoords = JSON.parse(loadedCoords);
-    getWeather(parseCoords.latitude,parseCoords.longitude);
+    getWeather(parseCoords.latitude, parseCoords.longitude);
   }
 }
 
